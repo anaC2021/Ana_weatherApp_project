@@ -30,8 +30,8 @@ h5.innerHTML = date;
 
 function showCurrentWeather(response) {
   console.log(response.data.main.temp);
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${response.data.main.temp}°C`;
+  let h2 = document.querySelector("#temp");
+  h2.innerHTML = `$(response.data.main.temp)°C`;
 }
 
 function searchCity(event) {
