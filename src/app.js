@@ -31,7 +31,12 @@ h5.innerHTML = date;
 function showCurrentWeather(response) {
   console.log(response.data.main.temp);
   let h2 = document.querySelector("h2");
-  h2.innerHTML = `${response.data.main.temp}°C`;
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  h2.innerHTML = Math.round(response.data.main.temp) + "°C";
+  humidityElement.innerHTML =
+    " Humidity: " + Math.round(response.data.main.humidity) + "%";
+  windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
 }
 
 function searchCity(event) {
