@@ -1,4 +1,4 @@
-let apiKey = "96d633fc4214e0a6d2d5b7ff2565aba7";
+let apiKey = "80062fa4f5363b47d57b65786d914929";
 
 let today = new Date();
 console.log(today);
@@ -30,8 +30,8 @@ h5.innerHTML = date;
 
 function showCurrentWeather(response) {
   console.log(response.data.main.temp);
-  let h2 = document.querySelector("#temp");
-  h2.innerHTML = `$(response.data.main.temp)°C`;
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = `${response.data.main.temp}°C`;
 }
 
 function searchCity(event) {
@@ -40,18 +40,8 @@ function searchCity(event) {
   console.log(city.value);
   let h1 = document.querySelector("h1");
   h1.innerHTML = city.value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=96d633fc4214e0a6d2d5b7ff2565aba7&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=80062fa4f5363b47d57b65786d914929&units=metric`;
   axios.get(apiUrl).then(showCurrentWeather);
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheit = 60;
-  console.log(fahrenheit);
-  let h2 = document.querySelector("#tempToday");
-  h2.innerHTML = fahrenheit;
-}
-let a = document.querySelector("#fahrenheit");
-a.addEventListener("click", convertToFahrenheit);
