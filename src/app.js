@@ -1,18 +1,11 @@
 let apiKey = "80062fa4f5363b47d57b65786d914929";
 
 let today = new Date();
-console.log(today);
 today.getDate();
 today.getDay();
 let hours = today.getHours().toString().padStart(2, "0");
-console.log(hours);
-
 let minutes = today.getMinutes().toString().padStart(2, "0");
-console.log(minutes);
-
 let time = hours + ":" + minutes;
-console.log(time);
-
 let days = [
   "Sunday",
   "Monday",
@@ -22,9 +15,7 @@ let days = [
   "Friday",
   "Saturday",
 ];
-console.log();
 let date = days[today.getDay()] + ", " + time;
-console.log(date);
 let h5 = document.querySelector("#today");
 h5.innerHTML = date;
 
