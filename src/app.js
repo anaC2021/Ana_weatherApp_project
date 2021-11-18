@@ -24,10 +24,15 @@ function showCurrentWeather(response) {
   let h2 = document.querySelector("h2");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
   h2.innerHTML = Math.round(response.data.main.temp) + "°C";
   humidityElement.innerHTML =
     " Humidity: " + Math.round(response.data.main.humidity) + "%";
   windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchCity(event) {
