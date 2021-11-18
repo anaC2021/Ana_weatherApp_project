@@ -1,3 +1,5 @@
+let apiKey = "96d633fc4214e0a6d2d5b7ff2565aba7";
+
 let today = new Date();
 console.log(today);
 today.getDate();
@@ -26,12 +28,20 @@ console.log(date);
 let h5 = document.querySelector("#today");
 h5.innerHTML = date;
 
+function showCurrentWeather(response) {
+  console.log(response.data.main.temp);
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = `${response.data.main.temp}°C`;
+}
+
 function searchCity(event) {
   event.preventDefault();
-  let input = document.querySelector("#city");
-  console.log(input.value);
+  let city = document.querySelector("#city");
+  console.log(city.value);
   let h1 = document.querySelector("h1");
-  h1.innerHTML = input.value;
+  h1.innerHTML = city.value;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=96d633fc4214e0a6d2d5b7ff2565aba7&units=metric`;
+  axios.get(apiUrl).then(showCurrentWeather);
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
