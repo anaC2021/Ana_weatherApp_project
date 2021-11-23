@@ -53,4 +53,5 @@ function search(city) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = city;
 }
+
 search("Lisbon");

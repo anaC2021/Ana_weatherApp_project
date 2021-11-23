@@ -15,12 +15,6 @@ h5,
 h4 {
   color: #000000;
   text-align: center;
-}
-
-h2,
-h1,
-h5,
-h4 {
   text-transform: capitalize;
 }
 
