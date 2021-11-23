@@ -8,22 +8,27 @@ body {
   align-items: center;
 }
 
-img {
-  display: block;
-  margin: 0 auto;
-}
-
 h2,
 h1,
 p,
 h5,
 h4 {
-  color: #0d3663;
+  color: #000000;
   text-align: center;
+}
+
+h2,
+h1,
+h5,
+h4 {
   text-transform: capitalize;
 }
 
-h1,
-p {
-  color: #2664b1;
+h1 {
+  color: #6a6a6a;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
 }
